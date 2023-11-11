@@ -1,0 +1,32 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Makr</th>
+            <th>Image</th>
+        </thead>
+        <tbody>
+            {% for auto in context %}
+            <tr>
+                <td>{{auto.name}}</td>
+                <td>{{auto.price}}</td>
+                <td>{{auto.color}}</td>
+                <td>{{auto.mark}}</td>
+                <td>
+                    <img scr="{% static auto.photo %}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
